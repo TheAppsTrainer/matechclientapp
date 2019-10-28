@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-8 offset-md-2">
+    <div class="list-group">
+      <a class="list-group-item list-group-item-action flex-column align-items-start"
+      *ngFor="let objContact of lstContacts" routerLink='/home/newcontact' [state]="{ PersonId:objContact.PersonId}">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{objContact.PersonName}} ({{objContact.PhoneNumber}}, {{objContact.Email }})</h5>
+        </div>
+        <small><strong>Address: </strong> {{objContact.Address}}, {{objContact.CityName}}, {{objContact.CountryName}}</small>
+        <p class="mb-1"><strong>Facebook Profile:</strong> {{objContact.FacebookProfile}}</p>
+      </a>
+    </div>
+  </div>
+  </div>

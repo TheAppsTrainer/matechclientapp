@@ -1,0 +1,90 @@
+<div class="container">
+  <form [formGroup]="newContactForm" autocomplete="off" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label>Person Name *</label>
+        <input class="form-control" formControlName="PersonName">
+      </div>
+      <div class="form-group col-md-4">
+        <label>Email</label>
+        <input class="form-control" formControlName="Email">
+      </div>
+      <div class="form-group col-md-4">
+        <label>Phone Number</label>
+        <input class="form-control" formControlName="PhoneNumber">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            Demographic and Social Media Detail
+          </div>
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="form-group col-md-3">
+                    <label>Gender</label>
+                    <select class="form-control" formControlName="GenderCode">
+                      <option *ngFor="let d of util.LstGenders" [value]="d.GenderCode">{{d.GenderName}}</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label>Age</label>
+                    <input type="number" class="form-control" formControlName="Age">
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label>Country</label>
+                    <select class="form-control" formControlName="CountryCode" (change)="CountryChanged()">
+                      <option *ngFor="let d of util.LstCountries" [value]="d.CountryCode">{{d.CountryName}}</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-3">
+                    <label>City</label>
+                    <select class="form-control" formControlName="CityCode">
+                      <option *ngFor="let d of util.LstCities" [value]="d.CityCode">{{d.CityName}}</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label>Zip Code</label>
+                    <input type="number" class="form-control" formControlName="ZipCode">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label>Address</label>
+                    <input class="form-control" formControlName="Address">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label>Facebook Profile URL</label>
+                    <input type="text" class="form-control" formControlName="FacebookProfile">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label>LinkedIn Profile URL</label>
+                    <input type="text" class="form-control" formControlName="LinkedInProfile">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label>Twitter Profile URL</label>
+                    <input type="text" class="form-control" formControlName="TwitterProfile">
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</div>

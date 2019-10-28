@@ -1,0 +1,17 @@
+<div class="container">
+  <form #loginForm='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(loginForm)">
+    <div class="form-group">
+      <label>User Name</label>
+      <input #UserName='ngModel' name='UserName' [(ngModel)]='formModel.UserName' class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input #Password='ngModel' type="password" name='Password' [(ngModel)]='formModel.Password' class="form-control" required>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-8">
+          <button type="submit" class="btn btn-primary btn-lg" [disabled]="loginForm.invalid">Login</button>        
+        </div>
+      </div>
+  </form>
+</div>

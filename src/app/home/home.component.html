@@ -1,0 +1,24 @@
+<!-- <nav class="navbar sticky-top navbar-dark bg-dark">
+  <a class="navbar-brand text-white">Matech Contacts App</a>
+  <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+</nav> -->
+
+<!-- <div class="card m-5" *ngIf="userDetails">
+  <ul class="list-group">
+    <li class="list-group-item">Full Name: {{userDetails.fullName}}</li>
+    <li class="list-group-item">Username: {{userDetails.userName}}</li>
+    <li class="list-group-item">Email Address: {{userDetails.email}}</li>
+  </ul>
+</div> -->
+<nav class="navbar sticky-top navbar-expand navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink='/home'>Matech Contacts App</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/home/newcontact' [state]="{ PersonId:'0'}">Add New Contact</a>
+      </li>
+    </ul>
+  </div>
+  <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+</nav>
+<router-outlet></router-outlet>
